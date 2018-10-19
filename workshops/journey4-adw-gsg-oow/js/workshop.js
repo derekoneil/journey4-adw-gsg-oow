@@ -381,9 +381,8 @@ labGuide.controller('labGuideController', ['$scope', '$http', '$mdSidenav', '$sa
                         $(this).on("click", function (event) {
                             event.preventDefault();
                             console.log('clicked on: ' + this.getAttribute('href'));
-                            $scope.getLabGuide({
-                                filename: this.getAttribute('href')
-                            });
+                            var win = window.open('?page='+this.getAttribute('href'), '_blank');
+                            win.focus();
                         });
                     }
                 })
